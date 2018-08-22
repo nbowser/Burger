@@ -1,0 +1,34 @@
+
+<h1>Eat-Da-Burger!</h1>
+
+{{!-- Area for uneaten burger to appear --}}
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{name}}
+            <button data-id="{{this.id}}" class="eat">Devour it!</button>
+        {{/unless}}        
+    {{/each}}
+</ul>
+
+{{!-- Area for EATEN burgers to appear --}}
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{name}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+{{!-- Form to enter your favorite burger--}}
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="new"></label>
+        <input type="text" id="new" name="burger">
+    </div>
+    
+    <button type="submit">Submit</button>
+
+    <h5>Enter a burger you want to eat Click the "Submit" button.</h5>
+</form>
